@@ -67,6 +67,16 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
+    @Test
+    public void total_order_value_should_return_correct_amount(){
+
+        String item ="Sweet corn soup";
+        List<String> itemList = new ArrayList<>();
+        itemList.add(item);
+        itemList.add(item);
+        double calculatedOrder = restaurant.totalOrder(itemList);
+        assertEquals(238,calculatedOrder);
+    }
 
 
 
